@@ -1,0 +1,49 @@
+package:
+    name: ds9
+    version: 8.7
+
+source:
+    git_url: https://github.com/kglotfelty/SAOImageDS9
+    git_branch: conda_for_ciao
+
+build:
+    binary_relocation: False
+
+requirements:
+    build:
+      - automake
+      - autoconf
+      - bzip2
+      - fontconfig
+      - libexpat
+      - libfreetype6
+      - libpng
+      - libxslt
+      - libxml2-devel
+      - libuuid
+      - xorg-libXft
+      - xorg-libx11
+      - xorg-libxrender
+
+    run:
+      - libxml2
+      - xorg-libx11
+      - xorg-libxft
+      - fontconfig
+      - libfreetype6
+      - xorg-libxrender
+      - libexpat
+      - libuuid
+      - bzip2
+      - libpng
+      - font-ttf-dejavu-sans-mono
+      - font-ttf-inconsolata
+      - font-ttf-source-code-pro
+      - font-ttf-ubuntu
+      - libzlib
+      - libiconv
+
+about:
+    home: https://ds9.si.edu
+    license: GPL3
+    summary: O.G. Astronomical Imager
