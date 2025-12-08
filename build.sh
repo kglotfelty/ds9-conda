@@ -1,5 +1,8 @@
 #!/bin/sh
 
+
+#PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:${PREFIX}/share/pkgconfig"
+
 ./unix/configure
 make
 
