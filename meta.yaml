@@ -7,9 +7,10 @@ package:
   version: {{ version }}
 
 source:
-  git_url: https://github.com/kglotfelty/SAOImageDS9
-  #~ git_url: file:///lenin1.real/DS9/build_from_source/SAOImageDS9/SAOImageDS9-20251204
-  git_branch: conda_for_ciao
+  git_url: https://github.com/SAOImageDS9/SAOImageDS9
+  #~ git_url: https://github.com/kglotfelty/SAOImageDS9
+  #~ git_branch: conda_for_ciao
+  git_branch: master
 
 build:
   number: {{ number }}
@@ -23,16 +24,21 @@ requirements:
     - automake
     - m4
     - pkg-config
+    - bison
+    - flex
 
   host:
+    # The host requirements are longer than expected to get Tk to
+    # build with support for true-type fonts (look for 'xft' enable
+    # in configure output).
     - bzip2
-    - fontconfig
     - expat
+    - fontconfig
     - libfreetype
     - libiconv
     - libpng
-    - libxslt
     - libxml2-devel
+    - libxslt
     - libuuid
     - zlib
     - xorg-kbproto
