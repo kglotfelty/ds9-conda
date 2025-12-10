@@ -50,10 +50,6 @@ requirements:
     - xorg-xproto
 
   run:
-    - font-ttf-dejavu-sans-mono
-    - font-ttf-inconsolata
-    - font-ttf-source-code-pro
-    - font-ttf-ubuntu
     - xorg-libxft
 
 about:
