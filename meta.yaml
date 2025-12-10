@@ -1,5 +1,5 @@
 {% set name = "ds9" %}
-{% set version = "8.6" %}
+{% set version = "8.7.b3" %}
 {% set number = "1" %}
 
 package:
@@ -48,8 +48,10 @@ requirements:
     - font-ttf-inconsolata
     - font-ttf-source-code-pro
     - font-ttf-ubuntu
+    - xorg-libxft
 
 about:
     home: https://ds9.si.edu
     license: GPL3
     summary: O.G. Astronomical Imager
+    dev_url: https://github.com/SAOImageDS9/SAOImageDS9
