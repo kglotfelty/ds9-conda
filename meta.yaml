@@ -1,5 +1,5 @@
 {% set name = "ds9" %}
-{% set version = "8.7.b3" %}
+{% set version = "8.7b3" %}
 {% set number = "1" %}
 
 package:
@@ -7,10 +7,12 @@ package:
   version: {{ version }}
 
 source:
-  git_url: https://github.com/SAOImageDS9/SAOImageDS9
+  url: https://ds9.si.edu/download/source/ds9.{{ version }}.tar.gz
+  sha256: f1713cd052ef21c5a5c89150deeb2196218a85422c9ff4955c3ae9238de22594
+  #~ git_url: https://github.com/SAOImageDS9/SAOImageDS9
+  #~ git_branch: master
   #~ git_url: https://github.com/kglotfelty/SAOImageDS9
   #~ git_branch: conda_for_ciao
-  git_branch: master
 
 build:
   number: {{ number }}
@@ -53,7 +55,19 @@ requirements:
     - xorg-libxft
 
 about:
-    home: https://ds9.si.edu
-    license: GPL3
-    summary: O.G. Astronomical Imager
-    dev_url: https://github.com/SAOImageDS9/SAOImageDS9
+  home: https://ds9.si.edu
+  license: GPL-3.0-only
+  license_family: GPL
+  summary: Astronomical image display and analysis application
+  dev_url: https://github.com/SAOImageDS9/SAOImageDS9
+  description: |
+      SAOImageDS9 is an astronomical imaging and data visualization
+      application.  DS9 supports FITS images and binary tables,
+      multiple frame buffers, region manipulation, and many
+      scale algorithms and colormaps.  It provides for easy
+      communication with external analysis tasks and is highly
+      configurable and extensible via XPA and SAMP.
+
+extra:
+  recipe-maintainers:
+    - kglotfelty

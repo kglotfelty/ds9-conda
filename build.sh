@@ -15,16 +15,27 @@
 #
 
 mkdir -p $PREFIX/imager
-cp ds9/unix/ds9 $PREFIX/imager/ds9
-if test -f ds9/unix/ds9.zip
+cp bin/ds9 $PREFIX/imager/ds9
+cp bin/xpa* $PREFIX/bin/
+
+if test -f bin/ds9.zip
 then
-  cp ds9/unix/ds9.zip $PREFIX/imager/ds9.zip
+    cp bin/ds9.zip $PREFIX/imager/ds9.zip
 fi
+
+
 
 cat << EOM > $PREFIX/bin/ds9
 #!/bin/sh
 
-"\${CONDA_PREFIX}/imager/ds9" "\$@"
+which ds9.override > /dev/null 2>&1
+stt=\$?
+if test \$stt -eq 0
+then
+    ds9.override "\$@"
+else
+    "\${CONDA_PREFIX}/imager/ds9" "\$@"
+fi
 EOM
 
 # ------- obsolete -------------------------
