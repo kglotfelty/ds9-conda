@@ -1,6 +1,6 @@
 {% set name = "ds9" %}
 {% set version = "8.7b3" %}
-{% set number = "1" %}
+{% set number = "0" %}
 
 package:
   name: {{ name|lower }}
@@ -21,6 +21,7 @@ requirements:
   build:
     - {{ compiler("c") }}
     - {{ compiler("cxx") }}
+    - libclang-cpp  # [osx]
     - make
     - autoconf
     - automake
