@@ -16,7 +16,8 @@
 
 mkdir -p $PREFIX/imager
 cp bin/ds9 $PREFIX/imager/ds9
-cp bin/xpa* $PREFIX/bin/
+
+#~ cp bin/xpa* $PREFIX/bin/
 
 if test -f bin/ds9.zip
 then
