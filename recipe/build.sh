@@ -14,35 +14,26 @@
 # TK script.
 #
 
-mkdir -p $PREFIX/imager
-cp bin/ds9 $PREFIX/imager/ds9
+mkdir -p "${PREFIX}"/imager
+cp bin/ds9 "${PREFIX}"/imager/ds9
 
 #~ cp bin/xpa* $PREFIX/bin/
 
 if test -f bin/ds9.zip
 then
-    cp bin/ds9.zip $PREFIX/imager/ds9.zip
+    cp bin/ds9.zip "${PREFIX}"/imager/ds9.zip
 fi
 
+mkdir -p "${PREFIX}"/bin
+cp "${RECIPE_DIR}"/ds9.wrapper "${PREFIX}"/bin/ds9
+chmod +x "${PREFIX}"/bin/ds9
 
-
-cat << EOM > $PREFIX/bin/ds9
-#!/bin/sh
-
-which ds9.override > /dev/null 2>&1
-stt=\$?
-if test \$stt -eq 0
-then
-    ds9.override "\$@"
-else
-    "\${CONDA_PREFIX}/imager/ds9" "\$@"
-fi
-EOM
-
-# ------- obsolete -------------------------
-#~ mkdir -p $PREFIX/lib/ds9
-#~ cp -r ds9/unix/mntpt/* $PREFIX/lib/ds9
-
-#~ cp ds9/unix/ds9.script $PREFIX/bin/ds9
-#~ chmod +x $PREFIX/bin/ds9
+# Copy the [de]activate scripts to $PREFIX/etc/conda/[de]activate.d.
+# This will allow them to be run on environment activation.
+for CHANGE in "activate" "deactivate"
+do
+    mkdir -p "${PREFIX}/etc/conda/${CHANGE}.d"
+    cp "${RECIPE_DIR}/${CHANGE}.sh" "${PREFIX}/etc/conda/${CHANGE}.d/${PKG_NAME}_${CHANGE}.sh"
+    cp "${RECIPE_DIR}/${CHANGE}.csh" "${PREFIX}/etc/conda/${CHANGE}.d/${PKG_NAME}_${CHANGE}.csh"
+done
 
