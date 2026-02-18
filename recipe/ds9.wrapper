@@ -1,0 +1,9 @@
+#!/bin/bash
+unset FONTCONFIG_PATH
+
+EXE="${ASCDS_IMAGER_PATH}/ds9"
+if [ -f "${ASCDS_CONTRIB}/config/ciao.ds9" ] && [ -f "${ASCDS_CONTRIB}/config/chips_startup.tk" ] ; then
+   \exec "${EXE}" -analysis "${ASCDS_CONTRIB}/config/ciao.ds9" -source "${ASCDS_CONTRIB}/config/chips_startup.tk" "$@"
+else
+   \exec "${EXE}" "$@"
+fi

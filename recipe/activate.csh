@@ -1,0 +1,1 @@
+setenv ASCDS_IMAGER_PATH $CONDA_PREFIX/imager

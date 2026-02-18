@@ -1,0 +1,1 @@
+export ASCDS_IMAGER_PATH=$CONDA_PREFIX/imager
