@@ -1,5 +1,5 @@
 {% set name = "ds9" %}
-{% set version = "8.7b3" %}
+{% set version = "8.7" %}
 {% set number = "0" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://ds9.si.edu/download/source/ds9.{{ version }}.tar.gz
-  sha256: f1713cd052ef21c5a5c89150deeb2196218a85422c9ff4955c3ae9238de22594
+  sha256: 7800715f020a4509d833236914ea3190af8f1e28bb0294829494e3e7fa33f768
   #~ git_url: https://github.com/SAOImageDS9/SAOImageDS9
   #~ git_branch: master
   #~ git_url: https://github.com/kglotfelty/SAOImageDS9
