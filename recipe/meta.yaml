@@ -34,6 +34,7 @@ requirements:
     # The host requirements are longer than expected to get Tk to
     # build with support for true-type fonts (look for 'xft' enable
     # in configure output).
+    - tk=8.6
     - bzip2
     - expat
     - fontconfig
