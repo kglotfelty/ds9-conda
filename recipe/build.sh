@@ -4,6 +4,10 @@
 # arm64-apple. It's possible to autoreconf -if the funtools and xpa
 # config files, but the ast ones require a special automake.
 # So we unset these so that configure will work.
+
+export CFLAGS="$CFLAGS -D_X_NONSTRING="
+export CPPFLAGS="$CPPFLAGS -D_X_NONSTRING="
+
 (unset host_alias; unset build_alias; ./unix/configure; make)
 
 #
