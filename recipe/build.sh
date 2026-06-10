@@ -6,7 +6,7 @@
 # So we unset these so that configure will work.
 
 export CFLAGS="$CFLAGS -D_X_NONSTRING="
-export CPPFLAGS="$CPPFLAGS -D_X_NONSTRING="
+#~ export CPPFLAGS="$CPPFLAGS -D_X_NONSTRING="
 
 (unset host_alias; unset build_alias; ./unix/configure; make)
 
