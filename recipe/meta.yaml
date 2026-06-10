@@ -12,7 +12,7 @@ source:
   #~ git_url: https://github.com/SAOImageDS9/SAOImageDS9
   #~ git_branch: master
   git_url: https://github.com/kglotfelty/SAOImageDS9
-  git_branch: tcltk9
+  git_branch: tcltk9_all
 
 build:
   number: {{ number }}
